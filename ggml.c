@@ -5,8 +5,10 @@
 
 #if defined(_MSC_VER) || defined(__MINGW32__)
 #include <malloc.h> // using malloc.h with MSC/MINGW
-#elif !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+#elif !defined(__FreeBSD__) && !defined(__APPLE__)
 #include <alloca.h>
+#else
+#include <stdlib.h>
 #endif
 
 #include <assert.h>
